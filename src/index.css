@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fitness-inspired design system with vibrant colors and animations */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 255 255 255;
+    --foreground: 224 71% 4%;
+
+    /* Card colors */
+    --card: 255 255 255;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 255 255 255;
+    --popover-foreground: 224 71% 4%;
+
+    /* Fitness-themed primary colors - Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 255 255 255;
+    --primary-glow: 217 91% 70%;
+
+    /* Secondary - Vibrant Orange */
+    --secondary: 24 95% 53%;
+    --secondary-foreground: 255 255 255;
+
+    /* Accent - Purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 255 255 255;
+
+    /* Muted colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Success - Green */
+    --success: 142 76% 36%;
+    --success-foreground: 355 0% 100%;
+
+    /* Destructive - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 95% 53%), hsl(217 91% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(262 83% 58% / 0.1));
+
+    /* Shadows */
+    --shadow-primary: 0 10px 40px hsl(217 91% 60% / 0.2);
+    --shadow-card: 0 4px 20px hsl(220 13% 91% / 0.3);
+    --shadow-glow: 0 0 50px hsl(217 91% 70% / 0.4);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode base colors */
+    --background: 224 71% 4%;
+    --foreground: 255 255 255;
+
+    --card: 224 71% 6%;
+    --card-foreground: 255 255 255;
+
+    --popover: 224 71% 6%;
+    --popover-foreground: 255 255 255;
+
+    /* Dark mode primary - brighter blue */
+    --primary: 217 91% 65%;
+    --primary-foreground: 224 71% 4%;
+    --primary-glow: 217 91% 75%;
+
+    /* Dark mode secondary */
+    --secondary: 24 95% 58%;
+    --secondary-foreground: 224 71% 4%;
+
+    /* Dark mode accent */
+    --accent: 262 83% 65%;
+    --accent-foreground: 224 71% 4%;
+
+    /* Dark muted colors */
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 10% 65%;
+
+    /* Dark success */
+    --success: 142 76% 46%;
+    --success-foreground: 224 71% 4%;
+
+    /* Dark destructive */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 255 255 255;
+
+    /* Dark borders */
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 217 91% 65%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(262 83% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 95% 58%), hsl(217 91% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 65% / 0.1), hsl(262 83% 65% / 0.1));
+
+    /* Dark shadows */
+    --shadow-primary: 0 10px 40px hsl(217 91% 65% / 0.3);
+    --shadow-card: 0 4px 20px hsl(224 71% 4% / 0.5);
+    --shadow-glow: 0 0 50px hsl(217 91% 75% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Button gradient */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+  }
+
+  .btn-gradient:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Card with custom shadow */
+  .card-elevated {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Pulse animation for CTAs */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: var(--shadow-primary);
+    }
+    50% {
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
